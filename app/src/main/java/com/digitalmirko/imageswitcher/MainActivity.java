@@ -2,8 +2,13 @@ package com.digitalmirko.imageswitcher;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.Animation;
 import android.widget.Button;
 import android.widget.ImageSwitcher;
+import android.widget.ImageView;
+import android.widget.ViewSwitcher;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,5 +27,27 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        imageSwitcher = (ImageSwitcher) findViewById(R.id.imageSwitcher);
+
+        imageSwitcher.setFactory(new ViewSwitcher.ViewFactory(){
+            @Override
+            public View makeView() {
+                ImageView imageView = new ImageView(getApplicationContext());
+                imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+                imageView.setLayoutParams(
+                        new ImageSwitcher.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                                ViewGroup.LayoutParams.MATCH_PARENT));
+
+                return  imageView;
+            }
+        });
+
+
+
+        imageSwitcher.setInAnimation(in);
+        imageSwitcher.setOutAnimation(out);
+
+
     }
 }
