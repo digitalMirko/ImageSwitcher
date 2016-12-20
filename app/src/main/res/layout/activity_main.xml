@@ -34,11 +34,16 @@
         android:layout_below="@+id/btnNext"
         android:layout_centerHorizontal="true" />
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
+        android:text="Zoo Critters"
+        android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="Zoo Critters" />
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:paddingTop="8dp"
+        android:textColor="#060101" />
+
 </RelativeLayout>
