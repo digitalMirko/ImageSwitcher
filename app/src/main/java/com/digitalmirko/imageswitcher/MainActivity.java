@@ -50,6 +50,27 @@ public class MainActivity extends AppCompatActivity {
         imageSwitcher.setInAnimation(in);
         imageSwitcher.setOutAnimation(out);
 
+        btnPrev = (Button) findViewById(R.id.btnPrev);
+        btnNext = (Button) findViewById(R.id.btnNext);
 
+        btnPrev.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                if(i > 0) {
+                    i--;
+                    imageSwitcher.setImageResource(images[i]);
+                }
+            }
+        });
+
+        btnNext.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                if(i < images.length - 1) {
+                    i++;
+                    imageSwitcher.setImageResource(images[i]);
+                }
+            }
+        });
     }
 }
