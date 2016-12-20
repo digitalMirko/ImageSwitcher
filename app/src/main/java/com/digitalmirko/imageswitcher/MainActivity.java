@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
@@ -43,7 +44,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        Animation in = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.in);
+        Animation out = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.out);
 
         imageSwitcher.setInAnimation(in);
         imageSwitcher.setOutAnimation(out);
